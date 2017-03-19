@@ -1,4 +1,4 @@
-import { getTweets, mostFavoritedTweet, store } from './twitter'
+import { getTweets, getScreenname, mostFavoritedTweet, store } from './twitter'
 
 function storeMostFavoriteTweet() {
   let tweets
@@ -18,7 +18,8 @@ function storeMostFavoriteTweet() {
       }).catch((e) => {
         console.log(e)
       })
+      getScreenname(tweets).forEach((t) =>
+        console.log(`USERNAME: ${t.screen_name}`)
+      )
     })
 }
-
-storeMostFavoriteTweet()

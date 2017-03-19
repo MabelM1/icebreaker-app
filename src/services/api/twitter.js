@@ -1,6 +1,6 @@
 // const express = require('express')
 import config from '../../../config/config' // keys for twitter API
-
+//const config = require('../../../config/config.js')
 const twit = require('twit') // module for interacting with Twitter API
 const mongodb = require('mongodb')
 
@@ -70,5 +70,11 @@ module.exports = {
         }
       })
     }
+  },
+  /**
+   * Gets the username of a tweet in 'wildcard' database
+   */
+  getScreenname(tweets, callback) {
+    T.get('user/show', callback)
   },
 }
